@@ -1,0 +1,21 @@
+# Work directory
+prefix = "."
+# Required for indexing
+stop-words = "stopwords.txt"
+
+# Directory for input data
+dataset = "yelp"
+# Corpus configuration file: $dataset/$corpus
+corpus = "line.toml"
+# Directory for the index
+index = "idx"
+
+uninvert = true # create the forward index by un-inverting the
+                # inverted index; can save some processing time
+                # when using both indexes
+
+[[analyzers]]
+method = "ngram-word"
+ngram = 1
+filter = "default-unigram-chain"
+
